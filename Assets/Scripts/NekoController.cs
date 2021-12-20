@@ -7,6 +7,7 @@ public class NekoController : MonoBehaviour
     public float MoveSpeed, JumpForce;
     public bool Jumping;
     public Rigidbody2D RG2D;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,11 @@ public class NekoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         float MovX = Input.GetAxisRaw("Horizontal");
         float MovY = Input.GetAxisRaw("Vertical");
-
+        animator.SetFloat("Speed 0", Mathf.Abs(MovX));
         // Horizontal Movement
 
         if(MovX != 0){
