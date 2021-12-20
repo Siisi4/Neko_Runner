@@ -37,5 +37,5 @@ public class NekoController : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col) {
             Jumping = false;
-        }
+        }  
 }
