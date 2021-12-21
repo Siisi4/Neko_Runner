@@ -34,7 +34,6 @@ public class NekoController : MonoBehaviour
         // Horizontal Movement
         if(MovX != 0){
             RG2D.velocity = new Vector2(MoveSpeed * MovX, RG2D.velocity.y);
-            animator.SetBool("Jump", true);
         }
 
         //Jumping
@@ -46,7 +45,9 @@ public class NekoController : MonoBehaviour
         }
 
         // si le chat saute l'animation d'avancement n'est pas joué !
-        
+        if(Jump == true){
+            animator.SetFloat("Speed", 0);
+        }
 
     }
     void OnCollisionEnter2D(Collision2D col) {

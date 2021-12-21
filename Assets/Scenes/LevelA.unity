@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 3
-  JumpForce: 3
+  JumpForce: 3.5
   Jumping: 1
   RG2D: {fileID: 0}
   animator: {fileID: 465945325}
