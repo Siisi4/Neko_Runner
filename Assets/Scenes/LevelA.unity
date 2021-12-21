@@ -194,9 +194,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 3
   JumpForce: 3
-  Jumping: 0
+  Jumping: 1
   RG2D: {fileID: 0}
   animator: {fileID: 465945325}
+  Jump: 0
+--- !u!114 &465945329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465945322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f273ac246a37e4dbc43b7c15877968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Kitty: {fileID: 465945322}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e210f23a8cfed499079536832af4a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraSpeed: 0.01
+  CameraSpeed: 0.001
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -535,6 +549,7 @@ MonoBehaviour:
   Jumping: 0
   RG2D: {fileID: 1296222964}
   animator: {fileID: 0}
+  Jump: 0
 --- !u!1 &1774462589
 GameObject:
   m_ObjectHideFlags: 0

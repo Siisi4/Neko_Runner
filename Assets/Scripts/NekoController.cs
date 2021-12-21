@@ -9,6 +9,8 @@ public class NekoController : MonoBehaviour
     public Rigidbody2D RG2D;
     public Animator animator;
 
+    public bool Jump;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,15 +22,19 @@ public class NekoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
         float MovX = Input.GetAxisRaw("Horizontal");
         float MovY = Input.GetAxisRaw("Vertical");
-        animator.SetFloat("Speed 0", Mathf.Abs(MovX));
-        // Horizontal Movement
+        
+        // animation de mouvement
+        animator.SetFloat("Speed", Mathf.Abs(MovX));
+        // animation de saut
+        animator.SetBool("Jump", Jump);
 
+        // Horizontal Movement
         if(MovX != 0){
             RG2D.velocity = new Vector2(MoveSpeed * MovX, RG2D.velocity.y);
+            animator.SetBool("Jump", true);
         }
 
         //Jumping
@@ -36,9 +42,15 @@ public class NekoController : MonoBehaviour
         if(MovY == 1 && !Jumping){
             RG2D.velocity = new Vector2(RG2D.velocity.x, JumpForce);
             Jumping = true;
+            Jump = true;
         }
+
+        // si le chat saute l'animation d'avancement n'est pas joué !
+        
+
     }
     void OnCollisionEnter2D(Collision2D col) {
             Jumping = false;
+            Jump = false;
         }  
 }
