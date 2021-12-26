@@ -5,19 +5,11 @@ using UnityEngine;
 public class CameraMoves : MonoBehaviour
 {
     public float CameraSpeed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject Camera;
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(CameraSpeed, 0, 0 * Time.deltaTime);
+        Camera.transform.Translate(CameraSpeed, 0, 0 * Time.deltaTime);
     }
 
-    void FixedUpdate() {
-        
-    }
 }
