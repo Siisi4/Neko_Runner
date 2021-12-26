@@ -1,0 +1,14 @@
+Bugs à corriger : 
+---------------------
+
+V - pauser le temps (caméra + score + mouvements)
+-> voir TimeManager. Camera comporte le script "Pause" & TimeManager les scripts avec le temps (setactive true / false)
+
+V - On peut bugu le.s poisson.s et rester dessus pour gagner des points à l'infini.
+-> Kitty interragit avec les rewards et pas l'inverse. L'object disparait après obtention. 
+
+- Le jeu ne doit pas démarrer directement. Mettre les commandes et le jeu commence dès qu'un bouton est press
+
+- Trouver une utilité au box "?"
+
+- Ajouter des bad fish qui te font -1 reward. 
