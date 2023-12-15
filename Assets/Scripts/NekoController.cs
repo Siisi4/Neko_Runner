@@ -8,6 +8,7 @@ public class NekoController : MonoBehaviour
     public bool Jumping;
     public Rigidbody2D RG2D;
     public Animator animator;
+    public GameObject flash;
 
     public bool Jump;
 
@@ -53,5 +54,18 @@ public class NekoController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col) {
             Jumping = false;
             Jump = false;
-        }  
+
+        
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "piege")
+        {
+            Debug.Log("FLASH!");
+            flash.SetActive(true);
+        }
+    }
 }
+
