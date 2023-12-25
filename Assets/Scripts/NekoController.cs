@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class NekoController : MonoBehaviour
 {
     public float MoveSpeed, JumpForce;
@@ -11,6 +13,9 @@ public class NekoController : MonoBehaviour
     public GameObject flash;
 
     public bool Jump;
+    AudioSource jumpSound;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +23,8 @@ public class NekoController : MonoBehaviour
         RG2D = GetComponent<Rigidbody2D>();
 
         //Jumping = true;
+
+        jumpSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -43,19 +50,21 @@ public class NekoController : MonoBehaviour
             RG2D.velocity = new Vector2(RG2D.velocity.x, JumpForce);
             Jumping = true;
             Jump = true;
+            jumpSound.Play(0);
         }
 
         // si le chat saute l'animation d'avancement n'est pas joué !
         if(Jump == true){
             animator.SetFloat("Speed", 0);
+
         }
 
     }
     void OnCollisionEnter2D(Collision2D col) {
             Jumping = false;
             Jump = false;
+            //jumpSound.Pause(); <<-- pas faire car le chat peut pas sauter plusieurs fois de toutes façons.
 
-        
 
     }
 
